@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-optical-sizing: auto;
+}
+body {
+    background-color:rgb(0, 0, 0);
+    font-family: "Pixelify Sans", sans-serif;
+    color: white;
+    font-size: 30px;
+}
+#backgroundBoard {
+    background-color: rgba(24, 24, 24, 0);
+    display: flex;
+    justify-self: center;
+    margin-top: 50px;
+    width: 703px;
+    height: 700px;
+    border-radius: 25px;
+    border: rgba(24, 24, 24, 0) solid 10px;
+    padding: 8px;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 100px rgb(30, 30, 30);
+    
+}
+.gameCell {
+    float: left;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(11, 11, 11);
+    border: 1px solid rgb(192, 189, 189);
+    border-radius: 10px;
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+    user-select: none;
+    box-shadow: 0 0 10px rgb(140, 140, 140);
+}
+.hoverCell:hover {
+    transform: scale(1.08);
+    background-color: rgb(171, 171, 171);
+    box-shadow: 0 0 50px rgb(255, 255, 255);
+}
+.hoverCell:active {
+    transform: scale(0.9);
+    background-color: black;
+}
+.notification {
+    background: black;
+    color: white;
+    width: 400px;
+    height: 200px;
+    border-radius: 25px;
+    border: solid gray 3px;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.45);
+    padding: 15px;
+    transition: 1s;
+
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 130px;
+    margin-top: 200px;
+    z-index: 1;
+}
+
+.notification p {
+    text-shadow: 1px 2px 5px rgb(204, 204, 204);
+    text-align: center;
+}
+
+.notification button {
+    font-family: "Pixelify Sans", sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: #202020;
+    font-size: 50px;
+    text-shadow: 1px 2px 5px rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    border-radius: 12px;
+    margin-top: 15px;
+    transition: 0.3s;
+    width: 250px;
+    align-self: center;
+    text-align: center;
+    border: none;
+    z-index: 0;
+}
+
+@property --angle{
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.notification button::after, button::before {
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(89, 0, 255), pink, rgb(89, 0, 255));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -2;
+    padding: 2px;
+    border-radius: 15px;
+    animation: 3s spin linear infinite;
+    transition: 0.5s;
+}
+
+
+.notification button::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+.notification button:hover {
+    scale: 1.1;
+}
+
+.notification button:hover::before {
+    transform: scale(1.3);
+}
+
+.notification button:active {
+    scale: 0.8;
+}
+
+.timerOfRound {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+    width: 200px;
+    padding: 15px;
+    border-radius: 15px;
+    border: solid 1px white;
+    box-shadow: 0 0 20px rgb(97, 97, 97);
+    margin-top: 20px;
+    justify-self: center;
+
+}
+
+.timerOfRound{
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 1px 2px 5px white;
+}
+
+
+.markered{
+    background: linear-gradient(orange, red);
+}
+
+.markered:hover {
+    box-shadow: 0 0 50px rgb(255, 87, 31);
+}

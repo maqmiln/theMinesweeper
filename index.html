@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скачать вирусы без игры!</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./image/logo.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+    </style>
+</head>
+<body>
+    <div id="timerOfRound" class="timerOfRound">
+        00:00
+    </div>
+
+    <div id="backgroundBoard">
+
+        <div id="startWindow" class="notification">
+                <p>Добро пожаловать в игру "Сапёр"</p>
+                <button onclick="createCells('startWindowBtn', 0); delWindow('startWindow'), startTimer()" id="startWindowBtn">Начать!</button>
+        </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+    <audio src="./sounds/soundForGameCell.wav" id="soundForGameCell"></audio>
+    <audio src="./sounds/soundForMarkCell.mp3" id="soundForMarkCell"></audio>
+    <audio src="./sounds/soundForBombCell.mp3" id="soundForBombCell"></audio>
+</body>
+</html>
